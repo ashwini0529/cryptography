@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
+                <div class="panel-heading">Bank Registration Form</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
@@ -38,6 +38,61 @@
                                 @endif
                             </div>
                         </div>
+
+                        <div class="form-group{{ $errors->has('aadhar') ? ' has-error' : '' }}">
+                            <label for="aadhar" class="col-md-4 control-label">Aadhar Card Number</label>
+
+                            <div class="col-md-6">
+                                <input id="aadhar" type="text" class="form-control" name="aadhar" value="{{ old('aadhar') }}" required>
+
+                                @if ($errors->has('aadhar'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('aadhar') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('dob') ? ' has-error' : '' }}">
+                            <label for="dob" class="col-md-4 control-label">Date Of Birth (dd/mm/yy)</label>
+
+                            <div class="col-md-6">
+                                <input id="dob" type="text" class="form-control" name="dob" value="{{ old('dob') }}" required>
+
+                                @if ($errors->has('dob'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('dob') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('secret_answer') ? ' has-error' : '' }}">
+                            <label for="secret_answer" class="col-md-4 control-label">What is your birth place? (Secret Question)</label>
+
+                            <div class="col-md-6">
+                                <input id="secret_answer" type="secret_answer" class="form-control" name="secret_answer" value="{{ old('secret_answer') }}" required>
+
+                                @if ($errors->has('secret_answer'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('secret_answer') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('contact') ? ' has-error' : '' }}">
+                            <label for="contact" class="col-md-4 control-label">Contact Number</label>
+
+                            <div class="col-md-6">
+                                <input id="contact" type="text" class="form-control" name="contact" value="{{ old('contact') }}" required>
+
+                                @if ($errors->has('contact'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('contact') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>

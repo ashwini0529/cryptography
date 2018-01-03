@@ -19,7 +19,7 @@ class AddUsernameFieldToUsersTable extends Migration
             $table->string('contact')->unique();
             $table->string('secret_answer');
             $table->string('dob');
-            
+
         });
     }
 
@@ -30,6 +30,12 @@ class AddUsernameFieldToUsersTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('users', function(Blueprint $table)
+        {
+            $table->dropColumn('aadhar');
+            $table->dropColumn('contact');
+            $table->dropColumn('secret_answer');
+            $table->dropColumn('dob');
+        });
     }
 }
