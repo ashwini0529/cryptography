@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <form method="POST" action="/accounts/search">
+                    <form method="POST" action="accounts/search">
                         {{csrf_field()}}
                         <div class="form-group">
                             <label for="account">Account Number</label>
