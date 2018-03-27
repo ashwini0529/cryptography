@@ -16,7 +16,7 @@
                                     <td>{{$bank->name}}</td>
                                 </tr>
                                 <tr>
-                                    <td>IFSCl</td>
+                                    <td>IFSC</td>
                                     <td>{{$bank->IFSC}}</td>
                                 </tr>
                                 </tbody>

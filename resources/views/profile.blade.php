@@ -54,10 +54,17 @@
                         <p>Bank Details</p>
                         <table class="table">
                             <tbody>
+                            @foreach($bankDetails as $bankDetail)
                             <tr>
-                                <td>No linked bank accounts</td>
+                                <td>Bank Name:</td>
+                                <td>{{$bankDetail->name}}</td>
+                            </tr>
+                            <tr>
+                                <td>IFSC:</td>
+                                <td>{{$bankDetail->IFSC}}</td>
                             </tr>
 
+                            @endforeach
                             </tbody>
 
                         </table>
