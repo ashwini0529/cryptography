@@ -20,3 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile', 'UserController@fetchUserDetails');
+Route::get('/banks', 'BankController@showBanks');
+Route::get('/user/accounts', 'UserController@fetchAccounts');
+Route::post('/accounts/search', 'AccountController@fetchUserDetailsByAccount');

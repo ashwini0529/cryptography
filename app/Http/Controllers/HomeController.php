@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use App\Bank;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = Auth::user();
+        $bank = DB::table('user_bank')
+            ->where('user_id', $user->id)->get();
+        $bankDetails = Bank::where('id', $bank[0]->bank_id)->get();
+        return view('home', compact('bankDetails'));
     }
 }
