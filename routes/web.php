@@ -23,3 +23,4 @@ Route::get('profile', 'UserController@fetchUserDetails');
 Route::get('banks', 'BankController@showBanks');
 Route::get('user/accounts', 'UserController@fetchAccounts');
 Route::post('accounts/search', 'AccountController@fetchUserDetailsByAccount');
+Route::post('accounts/add', 'UserController@addAccount');

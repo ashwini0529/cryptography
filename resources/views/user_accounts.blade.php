@@ -16,12 +16,15 @@
                                     <td>Account Number</td>
                                     <td>{{$account->account_number}}</td>
                                 </tr>
-
+                                <tr>
+                                    <td>Hashed CVV</td>
+                                    <td>{{$account->cvv}}</td>
+                                </tr>
+                                @endforeach
                                 </tbody>
 
                             </table>
                         </div>
-                        @endforeach
 
                 </div>
             </div>
