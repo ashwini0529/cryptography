@@ -13,7 +13,12 @@ class UserController extends Controller
         $user = Auth::user();
         $bank = DB::table('user_bank')
             ->where('user_id', $user->id)->get();
-        $bankDetails = Bank::where('id', $bank[0]->bank_id)->get();
+        if($bank->count()!=0) {
+            $bankDetails = Bank::where('id', $bank[0]->bank_id)->get();
+        }
+        else{
+            $bankDetails=[];
+        }
         return view('profile', compact('user', 'bankDetails'));
     }
 

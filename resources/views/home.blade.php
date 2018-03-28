@@ -56,6 +56,7 @@
 
                 <table class="table">
                     <tbody>
+                    @if($bankDetails)
                 @foreach($bankDetails as $bankDetail)
                         <tr>
                             <td>Bank Name</td>
@@ -66,6 +67,7 @@
                             <td>{{$bankDetail->IFSC}}</td>
                         </tr>
                 @endforeach
+                        @endif
 
 
                     </tbody>
